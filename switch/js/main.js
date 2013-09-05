@@ -23,10 +23,11 @@
         });
 
         var url = MashupPlatform.prefs.get('idas_server');
-        $('#console_debug').prepend("POST: "+url+"\n");
-        $('#console_debug').prepend("DATA: "+body+"\n");
+        $('#console_debug').prepend("<p>POST: "+url+"</br>");
+        $('#console_debug').prepend("DATA: "+body+"</p>");
+        //alert(body);
 
-        MashupPlatform.http.makeRequest("http://10.10.22.210:7777", {
+        MashupPlatform.http.makeRequest(url, {
                 contentType: 'application/json',
                 postBody: body,
                 onSuccess: function () {
@@ -51,11 +52,11 @@ function toggle()
     {
         //Changing the select field state to disabled and changing the value of button to enable
         button.textContent = "OFF";
-        code = "0";
+        code = "255";
         
     } else {
         button.textContent = "ON";
-        code = "255";
+        code = "0";
     }
 
     sendCommand(code);

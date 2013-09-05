@@ -10,7 +10,7 @@
         <!-- Name: Name of the widget -->
         <Name>SwitchTest</Name>
         <!-- Version: Current widget version number-->
-        <Version>0.0.12</Version>
+        <Version>0.0.17</Version>
         <!-- DisplayName: Name shown in the UI of the widget -->
         <DisplayName>Switch Test</DisplayName>
         <!-- Author: Widget developer(s) -->
@@ -38,11 +38,11 @@
 
     <!-- Platform.Wiring element. It defines both the widget inputs and outputs -->
     <Platform.Wiring>
-        <OutputEndpoint name="location_coord" 
+        <OutputEndpoint name="status" 
                         type="text" 
-                        label="Forecast location"
-                        description="This event is launched when the user clicks on the location name of current forecast."
-                        friendcode="location"/>
+                        label="Status dimmer"
+                        description="Get if the switch is on or off"
+                        friendcode="switch"/>
         <InputEndpoint  name="coord"
                         type="text"
                         label="Show forecast by coord"
