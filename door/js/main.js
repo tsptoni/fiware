@@ -42,22 +42,10 @@
         );
     };
 
-function toggle()
+function update()
 {
     //Checking if select field is enabled
-    var button = document.getElementById("onoff");
-    var code = "0";
+    var button = $('#id_update');
 
-    if (button.textContent === "ON")
-    {
-        //Changing the select field state to disabled and changing the value of button to enable
-        button.textContent = "OFF";
-        code = "255";
-        
-    } else {
-        button.textContent = "ON";
-        code = "0";
-    }
-
-    sendCommand(code);
+    sendCommand();
 };
