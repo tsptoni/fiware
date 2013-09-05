@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"></meta>
-        <title>Test</title>
-        <script type="text/javascript" src="js/main.js"></script>
+        <title>Array Led Controller</title>
+        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <style type="text/css">
           body {
@@ -38,10 +38,26 @@
     <body>
         <div class="cuadro">
           <div class="form-signin">
-            <h2 class="form-signin-heading text-center">Switch!</h2>
-            <p class="text-center"><button onclick="toggle();" class="btn btn-large btn-primary">Turn <span id="onoff">ON</span></button></p>
+            <h2 class="form-signin-heading text-center">Pick a color!</h2>
+              <form class="form-horizontal pagination-centered" id="id_led_rgb">
+                <div class="control-group input-prepend">
+                  <span class="add-on">R</span>
+                  <input class="span2" name="led_r" id="id_led_r" type="text" placeholder="Choose your color">
+                </div>
+                <div class="control-group input-prepend">
+                  <span class="add-on">G</span>
+                  <input class="span2" name="led_g" id="id_led_g" type="text" placeholder="Choose your color">
+                </div>
+                <div class="control-group input-prepend">
+                  <span class="add-on">B</span>
+                  <input class="span2" name="led_b" id="id_led_b" type="text" placeholder="Choose your color">
+                </div>
+            </br>
+            <button type="button" onclick="sendCommand()" class="btn btn-large btn-primary"> Submit!</button>
+            </form>
           </div>
 
-    </div> <!-- /container -->
+    </div> 
+    <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

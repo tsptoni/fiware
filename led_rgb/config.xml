@@ -6,27 +6,31 @@
     <!-- Catalog.ResourceDescription element. This element defines the core metadata of the widget -->
     <Catalog.ResourceDescription>
         <!-- Vendor: Company that distributes the widget -->
-        <Vendor>TalentumMLG</Vendor>
+        <Vendor>TALENTUMMLG</Vendor>
         <!-- Name: Name of the widget -->
-        <Name>SwitchTest</Name>
+        <Name>array-led-rgb</Name>
         <!-- Version: Current widget version number-->
-        <Version>0.0.1</Version>
+        <Version>0.0.2</Version>
         <!-- DisplayName: Name shown in the UI of the widget -->
-        <DisplayName>Switch Test</DisplayName>
+        <DisplayName>Array Led RGB controller</DisplayName>
         <!-- Author: Widget developer(s) -->
-        <Author>daniel lópez - antonio sánchez</Author>
+        <Author>antonio sanchez - daniel lopez</Author>
         <!-- Mail: Developer's email address -->
-        <Mail>danilopez.dev@gmail.com - tsptoni@gmail.com</Mail>
+        <Mail>tsptoni@gmail.com - danilopezdev@gmail.com</Mail>
         <!-- Description: Full widget description to be shown in the catalogue -->
-        <Description>I want to test my switches.</Description>
+        <Description>Array Led RGB controller</Description>
         <!-- Absolute or template-relative path to the image shown in the catalogue -->
-        <ImageURI>images/logo.jpg</ImageURI>
-        <iPhoneImageURI>images/logo_iphone.png</iPhoneImageURI>
+        <ImageURI>images/catalogue.png</ImageURI>
+        <!-- Absolute or template-relative path to the image to be used in smartphones -->
+        <iPhoneImageURI>images/catalogue_iphone.png</iPhoneImageURI>
+        <!-- Absolute or template-relative path to the widget's documentation -->
+        <WikiURI>doc/index.html</WikiURI>
     </Catalog.ResourceDescription>
 
     <!-- Platform.Preferences element. It defines user preferences -->
     <Platform.Preferences>
         <Preference name="api_key" type="text" description="Weather Uderground API key" label="API key" />
+        <Preference name="idas_server" type="text" description="Sensors server" label="Sensors Server" default="http://130.206.80.44:5371/m2m/v2/services/CampusofThings/devices/" />
     </Platform.Preferences>
 
     <!-- Platform.StateProperties element. It defines user preferences -->
@@ -35,16 +39,21 @@
 
     <!-- Platform.Wiring element. It defines both the widget inputs and outputs -->
     <Platform.Wiring>
-        <OutputEndpoint name="dimmer_sensor" 
-                        type="text" 
-                        label="Dimmer sensor"
-                        description="This event is launched when the status of the dimmer is changed."
-                        friendcode="dimmer"/>
-        <InputEndpoint  name="dimmer_controller"
+        <InputEndpoint  name="led_r"
                         type="text"
-                        label="Dimmer action"
-                        description="."
-                        friendcode="dimmer"/>
+                        label="Red component"
+                        description="Choose the number color."
+                        friendcode="location"/>
+        <InputEndpoint  name="led_g"
+                        type="text"
+                        label="Green component"
+                        description="Choose the number color."
+                        friendcode="location"/>
+        <InputEndpoint  name="led_b"
+                        type="text"
+                        label="Blue component"
+                        description="Choose the number color."
+                        friendcode="location"/>
     </Platform.Wiring>
 
 
@@ -57,6 +66,6 @@
     </Platform.Link>
 
     <!-- Platform.Rendering element. It specifies the default width and height of the widget -->
-    <Platform.Rendering width="6" height="30"/>
+    <Platform.Rendering width="6" height="36"/>
 
 </Template>
