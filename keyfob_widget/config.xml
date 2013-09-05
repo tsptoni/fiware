@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The Template core element. This element is mandatory -->
+<Template xmlns="http://wirecloud.conwet.fi.upm.es/ns/template#">
+
+    <!-- Catalog.ResourceDescription element. This element defines the core metadata of the widget -->
+    <Catalog.ResourceDescription>
+        <!-- Vendor: Company that distributes the widget -->
+        <Vendor>TalentumMLG</Vendor>
+        <!-- Name: Name of the widget -->
+        <Name>SwitchTest</Name>
+        <!-- Version: Current widget version number-->
+        <Version>0.0.1</Version>
+        <!-- DisplayName: Name shown in the UI of the widget -->
+        <DisplayName>Switch Test</DisplayName>
+        <!-- Author: Widget developer(s) -->
+        <Author>daniel lópez - antonio sánchez</Author>
+        <!-- Mail: Developer's email address -->
+        <Mail>danilopez.dev@gmail.com - tsptoni@gmail.com</Mail>
+        <!-- Description: Full widget description to be shown in the catalogue -->
+        <Description>I want to test my switches.</Description>
+        <!-- Absolute or template-relative path to the image shown in the catalogue -->
+        <ImageURI>images/logo.jpg</ImageURI>
+        <iPhoneImageURI>images/logo_iphone.png</iPhoneImageURI>
+    </Catalog.ResourceDescription>
+
+    <!-- Platform.Preferences element. It defines user preferences -->
+    <Platform.Preferences>
+        <Preference name="api_key" type="text" description="Weather Uderground API key" label="API key" />
+    </Platform.Preferences>
+
+    <!-- Platform.StateProperties element. It defines user preferences -->
+    <Platform.StateProperties>
+    </Platform.StateProperties>
+
+    <!-- Platform.Wiring element. It defines both the widget inputs and outputs -->
+    <Platform.Wiring>
+        <OutputEndpoint name="dimmer_sensor" 
+                        type="text" 
+                        label="Dimmer sensor"
+                        description="This event is launched when the status of the dimmer is changed."
+                        friendcode="dimmer"/>
+        <InputEndpoint  name="dimmer_controller"
+                        type="text"
+                        label="Dimmer action"
+                        description="."
+                        friendcode="dimmer"/>
+    </Platform.Wiring>
+
+
+    <!-- Platform.Link element. It binds the template with the actual widget's source code. -->
+    <Platform.Link>
+        <!-- XHTML element. It has the href attribute that links to the source code of the widget. -->
+        <!--                contenttype and cacheable attributes are optional -->
+        <XHTML href="index.html"/>
+
+    </Platform.Link>
+
+    <!-- Platform.Rendering element. It specifies the default width and height of the widget -->
+    <Platform.Rendering width="6" height="30"/>
+
+</Template>
