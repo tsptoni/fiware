@@ -10,7 +10,7 @@
         <!-- Name: Name of the widget -->
         <Name>SwitchTest</Name>
         <!-- Version: Current widget version number-->
-        <Version>0.0.1</Version>
+        <Version>0.0.17</Version>
         <!-- DisplayName: Name shown in the UI of the widget -->
         <DisplayName>Switch Test</DisplayName>
         <!-- Author: Widget developer(s) -->
@@ -21,12 +21,15 @@
         <Description>I want to test my switches.</Description>
         <!-- Absolute or template-relative path to the image shown in the catalogue -->
         <ImageURI>images/logo.jpg</ImageURI>
+        <!-- Absolute or template-relative path to the image to be used in smartphones -->
         <iPhoneImageURI>images/logo_iphone.png</iPhoneImageURI>
+        <!-- Absolute or template-relative path to the widget's documentation -->
+        <WikiURI>doc/index.html</WikiURI>
     </Catalog.ResourceDescription>
 
     <!-- Platform.Preferences element. It defines user preferences -->
     <Platform.Preferences>
-        <Preference name="api_key" type="text" description="Weather Uderground API key" label="API key" />
+        <Preference name="idas_server" type="text" description="Sensors server" label="Sensors Server" default="http://10.10.22.210:7777" />
     </Platform.Preferences>
 
     <!-- Platform.StateProperties element. It defines user preferences -->
@@ -35,16 +38,16 @@
 
     <!-- Platform.Wiring element. It defines both the widget inputs and outputs -->
     <Platform.Wiring>
-        <OutputEndpoint name="dimmer_sensor" 
+        <OutputEndpoint name="status" 
                         type="text" 
-                        label="Dimmer sensor"
-                        description="This event is launched when the status of the dimmer is changed."
-                        friendcode="dimmer"/>
-        <InputEndpoint  name="dimmer_controller"
+                        label="Status dimmer"
+                        description="Get if the switch is on or off"
+                        friendcode="switch"/>
+        <InputEndpoint  name="coord"
                         type="text"
-                        label="Dimmer action"
-                        description="."
-                        friendcode="dimmer"/>
+                        label="Show forecast by coord"
+                        description="Shows the weather forecast for a given location (a latitude longitude coordinate)."
+                        friendcode="location"/>
     </Platform.Wiring>
 
 
