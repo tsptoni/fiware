@@ -21,44 +21,6 @@
         }
       }
     </style>
-
-    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
-    <script type='text/javascript'>
-      google.load('visualization', '1', {packages:['gauge']});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Humidity', 80],
-        ]);
-
-        var options = {
-          width: 400, height: 300,
-          redFrom: 90, redTo: 100,
-          yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
-        };
-
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-        chart.draw(data, options);
-
-        var warmer = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Temperature', 20],
-          ]);
-
-        var warmer_options = {
-          width: 400, height: 300,
-          redFrom: 40, redTo: 50,
-          yellowFrom: 30, yellowTo: 40,
-          minorTicks: 5, max: 50,
-          greenColor: '#109618', greenFrom:0, greenTo: 30
-        };
-
-        var warmer_chart = new google.visualization.Gauge(document.getElementById('warmer_chart'));
-        warmer_chart.draw(warmer, warmer_options);
-      }
-    </script>
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -75,7 +37,7 @@
               <a href="#" class="navbar-link">Login</a>
             </p>
             <ul class="nav">
-              <li><a href="#">Home</a></li>
+              <li><a href="./index.html">Home</a></li>
               <li class="active"><a href="#">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
@@ -107,9 +69,13 @@
               </ul>
               <p>We use these devices simulating a hotel room in this way:</p>
               <ul>
-                <li>The other 4in1 located in the bathroom is going to be triggered when a person walks into the bathroom.</li>
-                <li>The</li>
+                <li>The 4in1 located in the bathroom is going to be triggered when a person walks into the bathroom: the light will switch on (dimmer)</li>
+                <li>The door sensor, with the movement sensor of the 4in1, will start the towel warmer for the customer. This towel warmer should display a variety of colours from blue to red in the RGBW</li>
+                <li>Also, the other 4in1 located in the room, will detect if the humidity has increased too much. If so, it will trigger another dimmer (dehumidifier).</li>
               </ul>
+              <h2>What we love about FI-WARE</h2>
+              <p>We have connected our devices to the Raspberry/Razberry system, using the device manager. We had every sensor and actuator working. Unfortunately, both RGBW iLED stopped working.</p>
+              <p>Every device is registerd in IDAS. Unfortunately, we were unable to </p>
             </span>
           </div><!--/row-->
         </div><!--/span-->

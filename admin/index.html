@@ -29,7 +29,7 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Label', 'Value'],
-          ['Humidity', 80],
+          ['Humidity', 40],
         ]);
 
         var options = {
@@ -44,7 +44,7 @@
 
         var warmer = google.visualization.arrayToDataTable([
           ['Label', 'Value'],
-          ['Temperature', 20],
+          ['Temperature', 15],
           ]);
 
         var warmer_options = {
@@ -110,14 +110,23 @@
             <div class="span4">
               <h2>Towel Warmer</h2>
               <div id="warmer_chart"></div>
+              <button class="btn btn-large btn-primary" type="button" onclick="sendCommand()">Turn towel warmer ON</button>
             </div><!--/span-->
             <div class="span4">
               <h2>Dehumidifier</h2>
-              <img src="http://dummyimage.com/280x280/6f6/fff&text=+" class="img-circle">
+              <img src="http://dummyimage.com/280x280/{% if humidity >= 70  %}
+                                                        {{ 5f5 }}
+                                                      {% else %}
+                                                        {{ ccc }}
+                                                      {% endif %}/fff&text=+" class="img-circle">
             </div><!--/span-->
             <div class="span4">
               <h2>Relax mode</h2>
-              <img src="http://dummyimage.com/280x280/f00/fff&text=+" class="img-circle">
+              <img src="http://dummyimage.com/280x280/{% if relax == 'on'  %}
+                                                        {{ f00 }}
+                                                      {% else %}
+                                                        {{ ccc }}
+                                                      {% endif %}/fff&text=+" class="img-circle">
             </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
@@ -133,6 +142,6 @@
 
 
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-    <!-- <script type="text/javascript" src="js/main.js"></script> -->
+    <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>
