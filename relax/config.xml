@@ -10,7 +10,7 @@
         <!-- Name: Name of the widget -->
         <Name>RelaxButton</Name>
         <!-- Version: Current widget version number-->
-        <Version>0.0.3</Version>
+        <Version>1.0.0</Version>
         <!-- DisplayName: Name shown in the UI of the widget -->
         <DisplayName>Relax Button</DisplayName>
         <!-- Author: Widget developer(s) -->
@@ -25,7 +25,7 @@
 
     <!-- Platform.Preferences element. It defines user preferences -->
     <Platform.Preferences>
-        <Preference name="my_server" type="text" description="Server" label="Server" default="http://130.206.83.33" />
+        <Preference name="my_server" type="text" description="Server" label="Server" default="http://130.206.83.33:80" />
     </Platform.Preferences>
 
     <!-- Platform.StateProperties element. It defines user preferences -->

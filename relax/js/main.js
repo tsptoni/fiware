@@ -19,23 +19,31 @@
     function sendCommand(code) {
 
         var url = MashupPlatform.prefs.get('my_server');
-        $('#console_debug').prepend("<p>GET: "+url+"</br>");
-        //alert(body);
-        xmlHttp = new XMLHttpRequest(); 
+        // $('#console_debug').prepend("<p>GET: "+url+"</br>");
+        // //alert(body);
+        
 
-        MashupPlatform.http.makeRequest(url, {
-                contentType: 'application/json',
-                postBody: body,
-                onSuccess: function () {
-                    //create_msg('Command sent successfully', 'success');
-                    $('#console_debug').prepend("success!\n");
-                },
-                onFailure: function () {
-                    //create_msg('Error reporting the issue');
-                    $('#console_debug').prepend("failure!\n");
-                }.bind(this)
-            }
-        );
+        // MashupPlatform.http.makeRequest(url, {
+        //         contentType: 'application/json',
+        //         postBody: body,
+        //         onSuccess: function () {
+        //             //create_msg('Command sent successfully', 'success');
+        //             $('#console_debug').prepend("success!\n");
+        //         },
+        //         onFailure: function () {
+        //             //create_msg('Error reporting the issue');
+        //             $('#console_debug').prepend("failure!\n");
+        //         }.bind(this)
+        //     }
+        // );
+
+        $.ajax({
+           url: url + "/relax/" + code,
+           success: function(data){
+                $('#console_debug').prepend(data + "\n");
+           },
+           timeout: 3000 //in milliseconds
+        });
     };
 
 function toggle(img)
