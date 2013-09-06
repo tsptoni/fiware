@@ -18,14 +18,10 @@
 
     function sendCommand(code) {
 
-        var body = JSON.stringify({
-            "commandML": "<paid:command name=\"SET\"><paid:cmdParam name=\"FreeText\"><swe:Text><swe:value>FIZCOMMAND " + code + "</swe:value></swe:Text></paid:cmdParam></paid:command>"
-        });
-
-        var url = MashupPlatform.prefs.get('idas_server');
-        $('#console_debug').prepend("<p>POST: "+url+"</br>");
-        $('#console_debug').prepend("DATA: "+body+"</p>");
+        var url = MashupPlatform.prefs.get('my_server');
+        $('#console_debug').prepend("<p>GET: "+url+"</br>");
         //alert(body);
+        xmlHttp = new XMLHttpRequest(); 
 
         MashupPlatform.http.makeRequest(url, {
                 contentType: 'application/json',
@@ -46,18 +42,18 @@ function toggle(img)
 {
     //Checking if select field is enabled
     // var button = $('#onoff');
-    var code = "0";
+    var code = "off";
 
     if (img.src.match(/switch-on.svg$/))
     {
         //Changing the select field state to disabled and changing the value of button to enable
         img.src = img.src.replace("-on", "-off");
-        code = "255";
+        code = "off";
         console.log('Relax is OFF.');
         
     } else {
         img.src = img.src.replace("-off", "-on");
-        code = "0";
+        code = "on";
         console.log('Relax is ON');
     }
 

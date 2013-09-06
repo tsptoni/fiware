@@ -8,28 +8,24 @@
         <!-- Vendor: Company that distributes the widget -->
         <Vendor>TalentumMLG</Vendor>
         <!-- Name: Name of the widget -->
-        <Name>SwitchTest</Name>
+        <Name>RelaxButton</Name>
         <!-- Version: Current widget version number-->
-        <Version>0.0.17</Version>
+        <Version>0.0.3</Version>
         <!-- DisplayName: Name shown in the UI of the widget -->
-        <DisplayName>Switch Test</DisplayName>
+        <DisplayName>Relax Button</DisplayName>
         <!-- Author: Widget developer(s) -->
         <Author>daniel lópez - antonio sánchez</Author>
         <!-- Mail: Developer's email address -->
         <Mail>danilopez.dev@gmail.com - tsptoni@gmail.com</Mail>
         <!-- Description: Full widget description to be shown in the catalogue -->
-        <Description>I want to test my switches.</Description>
+        <Description>Change to Relax mode.</Description>
         <!-- Absolute or template-relative path to the image shown in the catalogue -->
-        <ImageURI>images/logo.jpg</ImageURI>
-        <!-- Absolute or template-relative path to the image to be used in smartphones -->
-        <iPhoneImageURI>images/logo_iphone.png</iPhoneImageURI>
-        <!-- Absolute or template-relative path to the widget's documentation -->
-        <WikiURI>doc/index.html</WikiURI>
+        <ImageURI>images/switch-on.png</ImageURI>
     </Catalog.ResourceDescription>
 
     <!-- Platform.Preferences element. It defines user preferences -->
     <Platform.Preferences>
-        <Preference name="idas_server" type="text" description="Sensors server" label="Sensors Server" default="http://10.10.22.210:7777" />
+        <Preference name="my_server" type="text" description="Server" label="Server" default="http://130.206.83.33" />
     </Platform.Preferences>
 
     <!-- Platform.StateProperties element. It defines user preferences -->
@@ -40,14 +36,9 @@
     <Platform.Wiring>
         <OutputEndpoint name="status" 
                         type="text" 
-                        label="Status dimmer"
-                        description="Get if the switch is on or off"
+                        label="Relax mode on/off"
+                        description="Set relax mode on or off"
                         friendcode="switch"/>
-        <InputEndpoint  name="coord"
-                        type="text"
-                        label="Show forecast by coord"
-                        description="Shows the weather forecast for a given location (a latitude longitude coordinate)."
-                        friendcode="location"/>
     </Platform.Wiring>
 
 
@@ -60,6 +51,6 @@
     </Platform.Link>
 
     <!-- Platform.Rendering element. It specifies the default width and height of the widget -->
-    <Platform.Rendering width="6" height="30"/>
+    <Platform.Rendering width="5" height="60"/>
 
 </Template>
