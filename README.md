@@ -1,3 +1,3 @@
 # FI-WARE Hackathon
 
-Authors: Daniel López Pedrosa & Antonio Sánchez
+Authors: Antonio Sánchez Pineda & Daniel López Pedrosa
